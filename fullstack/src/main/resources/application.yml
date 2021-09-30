@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url : "jdbc:postgresql://localhost:5432/splitpay"
+    username: "postgres"
+    password: "123"
+    driverClassName: "org.postgresql.Driver"
+  jpa:
+    hibernate:
+      ddl-auto: "update"

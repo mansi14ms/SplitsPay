@@ -1,0 +1,31 @@
+<div class="login-form">
+    <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+            <h3 >SPLITPAY</h3>
+            <h4 >Sign Up</h4>   
+            <div class="form-group has-error">
+                <input type="text" class="form-control" placeholder="User Name" formControlName="userName" >
+                <span *ngIf="!profileForm.get('userName')!.valid && profileForm.get('userName')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName" >
+                <span *ngIf="!profileForm.get('fullName')!.valid && profileForm.get('fullName')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+            </div>   
+            <div class="form-group">
+                <input type="phone" class="form-control" placeholder="Phone Number" formControlName="phone" >
+                <span *ngIf="!profileForm.get('phone')!.valid && profileForm.get('phone')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+            </div>  
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email-ID" formControlName="email" >
+                <span *ngIf="!profileForm.get('email')!.valid && profileForm.get('email')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+            </div>       
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password" >
+                <span *ngIf="!profileForm.get('password')!.valid && profileForm.get('password')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+            </div>     
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+            </div>
+        </form>
+        <p class="text-center small">Already a Member?<a routerLink="/" style="color:black">Login Here!</a></p>
+    </div>
+    

@@ -1,0 +1,55 @@
+
+.form-control {
+	min-height: 2.56rem;
+	background: #f2f2f2;
+	box-shadow: none !important;
+	border: transparent;
+}
+.form-control:focus {
+	background: #e2e2e2;
+}
+.form-control, .btn {        
+	border-radius: 0.125rem;
+    border-color: #e2e2e2;
+}
+.login-form {
+	width: 21.875rem;
+	margin: 1.875rem auto;
+	text-align: center;
+    margin-top: 6rem;
+}
+.login-form h2 {
+	margin: 0.6rem 0 25px;
+}
+.login-form form {
+	color: #7a7a7a;
+	border-radius: 0.188rem;
+	margin-bottom: 0.938rem;
+	background: #fff;
+	box-shadow: 0px 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.3);
+	padding: 1.875rem;
+}
+.login-form .btn {        
+	font-size: 1rem;
+	font-weight: bold;
+	background: #8472F5;
+	border: none;
+	outline: none !important;
+}
+.login-form .btn:hover, .login-form .btn:focus {
+	background: #8472F5;
+}
+.login-form a {
+	color: #fff;
+	text-decoration: underline;
+}
+.login-form a:hover {
+	text-decoration: none;
+}
+.login-form form a {
+	color: #7a7a7a;
+	text-decoration: none;
+}
+.login-form form a:hover {
+	text-decoration: underline;
+}

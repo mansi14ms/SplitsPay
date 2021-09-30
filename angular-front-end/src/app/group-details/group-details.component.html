@@ -1,0 +1,43 @@
+<div class="body">
+	<div class="main">
+		<div class="row">
+			<div class="col-md-2">
+				<h2>Outing Bills</h2> </div>
+			<div class="col-md-4">
+				<div class="expense" *ngIf = "totalBalance > 0" style="color:green;font-weight: 1000;"> Balances : {{this.totalBalance}} </div>
+        <div class="expense" *ngIf = "0 > totalBalance" style="color:red;font-weight: 1000;"> Balances : {{this.totalBalance}} </div>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-4">
+				<a [routerLink]="['add-expense/' + groupId]">
+					<button class="btn btn-primary" style="background-color:#FC754A;">Add Expense</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="table">
+		<div class="row">
+			<div class="col-md-12">
+				<div>
+					<div class="row" style="margin-left: 3rem;">
+						<div class="col-md-3"> <b>Spent For</b> </div>
+						<div class="col-md-4" style="margin-left: 3rem;"> <b>Paid By</b> </div>
+						<div class="col-md-3"> <b>Amount</b> </div>
+					</div>
+					<div class="col-md-12" *ngFor="let data of map  | keyvalue">
+						<div class="row box" style="margin-left: 0.05rem;">
+							<div class="col-md-3"> {{data.key}} </div>
+							<div class="col-md-9" *ngFor="let find of data.value | keyvalue">
+								<div class="row">
+									<div class="col-md-3" > {{find.key}} </div>
+									<div class="col-md-3" style="margin-left: 12rem;">
+										<div *ngIf="find.value >=0" style="color:green;font-weight: 1000;"> {{find .value}} </div>
+										<div *ngIf="0 > find.value" style="color:red"> {{find .value}} </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

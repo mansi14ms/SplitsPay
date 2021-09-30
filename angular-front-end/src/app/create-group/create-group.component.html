@@ -1,0 +1,37 @@
+<div class="head">
+    <h3>Create Group</h3>
+</div>
+<div class="main-body" >
+    <div class="login-form">
+        <form [formGroup]="createForm" (ngSubmit)="submitForm()">  
+                <div class="form-group has-error">
+                    <h6>Group Name</h6>
+                    <input type="text" class="form-control" placeholder="Group Name" formControlName="groupName" >
+                    <span *ngIf="!createForm.get('groupName')!.valid && createForm.get('groupName')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>
+                <div class="form-group">
+                    <h6>Description</h6>
+                    <input type="text" class="form-control" placeholder="Enter description" formControlName="description" >
+                    <span *ngIf="!createForm.get('description')!.valid && createForm.get('description')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>   
+                <div class="form-group">
+                    <h6> Add Members</h6>
+                    <ejs-multiselect
+                    [dataSource]="userData"
+                    [mode]="default"
+                    [fields]="fields"
+                    [placeholder]="'Search by name'"
+                    formControlName="members"
+                  ></ejs-multiselect>
+                    <span *ngIf="!createForm.get('members')!.valid && createForm.get('members')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>           
+                <div class="form-group">
+                    <div class="buttons">
+                    <button type="submit" class="btn btn-primary" style="background-color:whitesmoke;color:black" (click)="reset()">Cancel</button>&nbsp;&nbsp;    
+                    <button type="submit" class="btn btn-primary" style="background-color:#FC754A;">Create</button>
+                    </div>
+            </div>
+            </form>
+           
+        </div>
+    </div>   

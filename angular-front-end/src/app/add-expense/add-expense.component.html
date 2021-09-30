@@ -1,0 +1,47 @@
+<div class="head">
+    <h3>Add Expense</h3>
+</div>
+<div class="main-body">
+    <div class="login-form" (ngSubmit)="submitForm()">
+        <form [formGroup]="profileForm">  
+                <div class="form-group has-error">
+                    <h5>Bill For</h5>
+                    <input type="text" class="form-control" placeholder="Input" formControlName="billFor" >
+                    <span *ngIf="!profileForm.get('billFor')!.valid && profileForm.get('billFor')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>
+                <div class="form-group">
+                    <h5>Amount</h5>
+                    <input type="text" class="form-control" placeholder="Amount" formControlName="amount" >
+                    <span *ngIf="!profileForm.get('amount')!.valid && profileForm.get('amount')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>   
+                <div class="form-group">
+                    <h5>Paid On</h5>                    
+                    <input type="date" class="form-control" placeholder="Choose a date" formControlName="date" >
+                    <span *ngIf="!profileForm.get('date')!.valid && profileForm.get('date')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>  
+                <div class="form-group">
+                    <h5>Paid By</h5>                   
+                    <input type="text" class="form-control" placeholder="Input Name" formControlName="fromUser" >
+                    <span *ngIf="!profileForm.get('fromUser')!.valid && profileForm.get('fromUser')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                </div>       
+                <div class="form-group">
+                    <h5>With Me And</h5>
+                    <ejs-multiselect
+                    [dataSource]="userData"
+                    [mode]="default"
+                    [fields]="fields"
+                    [placeholder]="'Search by name'"
+                    formControlName="toUser">
+                  </ejs-multiselect>
+                   <span *ngIf="!profileForm.get('toUser')!.valid && profileForm.get('toUser')!.touched" style="color:red;margin-left: -12rem;">Please enter!</span>
+                  </div>     
+                <div class="form-group">
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-primary" style="background-color:whitesmoke;color:black" (click)="reset()">Cancel</button>&nbsp;&nbsp;    
+                        <button type="submit" class="btn btn-primary" style="background-color:#FC754A;"  (click)="submitForm()">Add </button>
+                        </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>   
